@@ -1,11 +1,11 @@
 import db from "@/db/db";
-import { NextApiRequest } from "next";
+
 import { notFound } from "next/navigation";
 import fs from "fs/promises";
 import { NextResponse } from "next/server";
 
 export async function GET(
-  req: NextApiRequest,
+  req: Request,
   { params: { id } }: { params: { id: string } }
 ) {
   const product = await db.product.findUnique({
